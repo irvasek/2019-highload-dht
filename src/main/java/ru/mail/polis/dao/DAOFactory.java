@@ -16,10 +16,12 @@
 
 package ru.mail.polis.dao;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.File;
 import java.io.IOException;
+
+import org.jetbrains.annotations.NotNull;
+
+import ru.mail.polis.dao.vasekha.MyDAO;
 
 /**
  * Custom {@link DAO} factory.
@@ -53,6 +55,6 @@ public final class DAOFactory {
             throw new IllegalArgumentException("Path is not a directory: " + data);
         }
 
-        throw new IllegalStateException("Not implemented yet");
+        return new MyDAO(data, MAX_HEAP / 24);
     }
 }
